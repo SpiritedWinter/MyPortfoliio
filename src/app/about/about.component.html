@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="hello-there-container">
+    <h1>Hello There</h1>
+    <p>Welcome to my portfolio! I'm Jaskaran Sohal, a passionate developer...</p>
+  </div>
+
+  <div class="about-me-container">
+    <h1>About Me</h1>
+    <p>I am a dedicated and enthusiastic developer with a strong passion for creating...</p>
+  </div>
+
+  <div class="boxes-container">
+    <div class="box">
+      <h2>Professional Journey</h2>
+      <p>Details about your professional journey...</p>
+    </div>
+    <div class="box">
+      <h2>Skills & Expertise</h2>
+      <p>Details about your skills and expertise...</p>
+    </div>
+    <div class="box">
+      <h2>Projects & Achievements</h2>
+      <p>Details about your projects and achievements...</p>
+    </div>
+  </div>
+</div>
+
+<!-- Popup -->
+<div *ngIf="showPopup" class="popup-overlay" (click)="closePopup()">
+  <div class="popup-content" (click)="$event.stopPropagation()">
+    <button class="close-button" (click)="closePopup()">×</button>
+    <ng-container [ngSwitch]="activePopup">
+      <div *ngSwitchCase="'professional'">
+        <h2>Professional Journey</h2>
+        <div class="journey-content">
+          <h3>Experience</h3>
+          <ul>
+            <li>Software Developer at Tech Company (2022-Present)</li>
+            <li>Junior Developer at StartUp Inc (2020-2022)</li>
+          </ul>
+          <h3>Education</h3>
+          <ul>
+            <li>Bachelor's in Computer Science</li>
+            <li>Various certifications in web development</li>
+          </ul>
+        </div>
+      </div>
+      <div *ngSwitchCase="'technical'">
+        <h2>Technical Expertise</h2>
+        <div class="expertise-content">
+          <h3>Programming Languages</h3>
+          <ul>
+            <li>JavaScript/TypeScript</li>
+            <li>Python</li>
+            <li>Java</li>
+          </ul>
+          <h3>Frameworks & Tools</h3>
+          <ul>
+            <li>Angular</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Git</li>
+          </ul>
+        </div>
+      </div>
+      <div *ngSwitchDefault>
+        <h2>Welcome to My Portfolio!</h2>
+        <p>Thank you for visiting. Feel free to explore my projects and get in touch if you'd like to collaborate.</p>
+      </div>
+    </ng-container>
+  </div>
+</div>
