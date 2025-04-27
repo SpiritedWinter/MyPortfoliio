@@ -34,10 +34,10 @@ import { RouterModule, RouterOutlet, RouterLink, RouterLinkActive } from '@angul
           </div>
 
           <div class="social-links">
-            <a href="https://linkedin.com" target="_blank" rel="noopener">
+            <a href="https://www.linkedin.com/in/jaskaran-singh-b390761a7/" target="_blank" rel="noopener">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener">
+            <a href="https://github.com/SpiritedWinter" target="_blank" rel="noopener">
               <i class="fab fa-github"></i>
             </a>
           </div>

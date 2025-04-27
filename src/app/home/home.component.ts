@@ -1,6 +1,6 @@
 import { Component, ViewChild, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 import { TrexGameComponent } from '../game/trex-game.component';
 
 @Component({
@@ -267,6 +267,8 @@ export class HomeComponent {
   buttonPosition = 0;
   hoverCount = 0;
 
+  constructor(private router: Router) {}
+
   @HostListener('window:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.code === 'Space') {
@@ -297,6 +299,8 @@ export class HomeComponent {
       event.preventDefault();
       return;
     }
+    // Redirect to About page
+    this.router.navigate(['/about']);
     // Reset the state if button was caught
     this.buttonPosition = 0;
     this.hoverCount = 0;
