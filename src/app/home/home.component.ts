@@ -18,6 +18,7 @@ import { TrexGameComponent } from '../game/trex-game.component';
          [class.position-3]="buttonPosition === 3 && hoverCount < 2"
          [class.catchable]="hoverCount >= 2"
          [class.hide-skills]="isGameStarted">
+         
          Skills {{ hoverCount >= 2 ? '(Caught me!)' : '' }}
       </a>
       <div class="code-wrapper" [class.fade-out]="isGameStarted">
