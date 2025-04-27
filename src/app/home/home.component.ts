@@ -22,8 +22,10 @@ import { TrexGameComponent } from '../game/trex-game.component';
       </a>
       <div class="code-wrapper" [class.fade-out]="isGameStarted">
         <div class="intro-block">
-          <pre class="code-syntax"><span class="keyword">static void</span> <span class="method">Main</span>() {{ '{' }}</pre>
-          <pre class="code-syntax indent"><span class="class">Console</span>.<span class="method">WriteLine</span>(<span class="string">"Press SPACE to play T-Rex Game"</span>);</pre>
+          <ng-container *ngIf="!isMobile">
+            <pre class="code-syntax"><span class="keyword">static void</span> <span class="method">Main</span>() {{ '{' }}</pre>
+            <pre class="code-syntax indent"><span class="class">Console</span>.<span class="method">WriteLine</span>(<span class="string">\"Press SPACE to play T-Rex Game\"</span>);</pre>
+          </ng-container>
           <div class="content-wrapper" [class.hide-content]="isGameStarted">
             <div class="intro-text">
               <h1>
@@ -36,7 +38,9 @@ import { TrexGameComponent } from '../game/trex-game.component';
             </div>
           </div>
         </div>
-        <pre class="code-syntax">{{ '}' }}</pre>
+        <ng-container *ngIf="!isMobile">
+          <pre class="code-syntax">{{ '}' }}</pre>
+        </ng-container>
       </div>
       <div class="game-section" [class.game-visible]="isGameStarted">
         <app-trex-game (gameStarted)="onGameStart()" #gameComponent></app-trex-game>
@@ -313,8 +317,16 @@ export class HomeComponent {
   isGameStarted = false;
   buttonPosition = 0;
   hoverCount = 0;
+  isMobile = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.checkMobile();
+    window.addEventListener('resize', this.checkMobile.bind(this));
+  }
+
+  checkMobile() {
+    this.isMobile = window.innerWidth <= 768;
+  }
 
   @HostListener('window:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
