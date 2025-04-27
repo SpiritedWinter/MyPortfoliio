@@ -31,7 +31,7 @@ import { TrexGameComponent } from '../game/trex-game.component';
               <h1>
                 <span class="text-line line1" [class.slide-up]="isGameStarted">Hi,</span><br>
                 <span class="text-line line2" [class.slide-up]="isGameStarted">I'm <span class="gradient-text">Jaskaran</span>,</span><br>
-                <span class="text-line line3" [class.slide-up]="isGameStarted">backend developer</span>
+                <span class="text-line line3" [class.slide-up]="isGameStarted">Product Developer</span>
               </h1>
               <p class="subtitle text-line line4" [class.slide-up]="isGameStarted">Full Stack Developer / Software Engineer</p>
               <a routerLink="/contact" class="contact-button text-line line5" [class.slide-up]="isGameStarted">Contact me!</a>
