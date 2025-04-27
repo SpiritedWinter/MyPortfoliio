@@ -498,4 +498,133 @@
   .achievements-list li {
     font-size: 0.9rem;
   }
+}
+
+/* Technical Expertise Popup Styles */
+.expertise-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.expertise-category {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.expertise-category:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.expertise-category h4 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: 'Fira Code', monospace;
+  transition: all 0.3s ease;
+  cursor: default;
+  user-select: none;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.skill-tag:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .expertise-category {
+    padding: 1rem;
+  }
+
+  .skill-tags {
+    gap: 0.6rem;
+  }
+
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.expertise-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.expertise-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: #000;
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  color: #eaf6f6;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  position: relative;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+.expertise-icon {
+  font-size: 1.7rem;
+  margin-right: 0.7rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 3px #19c6c255);
+}
+
+.expertise-card b {
+  color: #fff;
+  font-weight: 600;
+  margin-right: 0.7rem;
+}
+
+.expertise-card .badge {
+  display: inline-block;
+  background: #073c3c;
+  color: #19c6c2;
+  border-radius: 7px;
+  padding: 0.18em 0.85em;
+  margin: 0 0.18em 0 0;
+  font-size: 0.98em;
+  font-family: 'Fira Code', monospace;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: none;
+  transition: background 0.2s;
+}
+
+@media (max-width: 768px) {
+  .expertise-card {
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+  }
 } 

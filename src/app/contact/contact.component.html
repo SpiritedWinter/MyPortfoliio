@@ -1,31 +1,45 @@
-<div class="container">
-  <div class="contact-me-container">
-    <h1>How to Contact Me</h1>
-    <p>Feel free to reach out through any of these channels. I'm always open to new opportunities, collaborations, or just a friendly chat!</p>
-
-    <div class="boxes-container">
-      <div class="box">
-        <i class="fas fa-envelope icon"></i>
-        <h2>Email</h2>
-        <p>jaskaran.sohal&#64;gmail.com</p>
+<div class="about-container">
+  <div class="content-wrapper">
+    <div class="header-section">
+      <h1 class="about-title">Get in Touch</h1>
+    </div>
+    <div class="mission-statement">
+      <p class="mission-text">
+        Let's connect and explore opportunities together. I'm always excited to discuss new projects, share ideas, or just have a friendly conversation about technology and innovation.
+      </p>
+    </div>
+    <div class="info-section">
+      <div class="floating-container" (click)="openLink(contactLinks.email)">
+        <div class="hover-circle"></div>
+        <div class="icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h2 class="info-title">Email</h2>
+        <p class="info-description">jaskaran.sohal&#64;gmail.com</p>
       </div>
-
-      <div class="box">
-        <i class="fab fa-linkedin icon"></i>
-        <h2>LinkedIn</h2>
-        <p>Connect with me professionally</p>
+      <div class="floating-container" (click)="openLink(contactLinks.linkedin)">
+        <div class="hover-circle"></div>
+        <div class="icon">
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <h2 class="info-title">LinkedIn</h2>
+        <p class="info-description">Connect with me professionally</p>
       </div>
-
-      <div class="box">
-        <i class="fab fa-github icon"></i>
-        <h2>GitHub</h2>
-        <p>Check out my code repositories</p>
+      <div class="floating-container" (click)="openLink(contactLinks.github)">
+        <div class="hover-circle"></div>
+        <div class="icon">
+          <i class="fab fa-github"></i>
+        </div>
+        <h2 class="info-title">GitHub</h2>
+        <p class="info-description">Check out my code repositories</p>
       </div>
-
-      <div class="box">
-        <i class="fab fa-instagram icon"></i>
-        <h2>Instagram</h2>
-        <p>Follow my creative journey</p>
+      <div class="floating-container" (click)="openLink(contactLinks.leetcode)">
+        <div class="hover-circle"></div>
+        <div class="icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h2 class="info-title">LeetCode</h2>
+        <p class="info-description">Check out my coding challenges</p>
       </div>
     </div>
   </div>

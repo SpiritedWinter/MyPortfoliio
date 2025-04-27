@@ -30,10 +30,7 @@ import { RouterModule, RouterOutlet, RouterLink, RouterLinkActive } from '@angul
           <div class="nav-links">
             <a routerLink="/home" routerLinkActive="active" (click)="closeSidebar()">Home</a>
             <a routerLink="/about" routerLinkActive="active" (click)="closeSidebar()">About</a>
-            <a routerLink="/skills" routerLinkActive="active" (click)="closeSidebar()">My Skills</a>
-            <a routerLink="/work" routerLinkActive="active" (click)="closeSidebar()">Work</a>
             <a routerLink="/contact" routerLinkActive="active" (click)="closeSidebar()">Contact</a>
-            <a routerLink="/blog" routerLinkActive="active" (click)="closeSidebar()" class="highlight">Blog</a>
           </div>
 
           <div class="social-links">
@@ -42,9 +39,6 @@ import { RouterModule, RouterOutlet, RouterLink, RouterLinkActive } from '@angul
             </a>
             <a href="https://github.com" target="_blank" rel="noopener">
               <i class="fab fa-github"></i>
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener">
-              <i class="fab fa-youtube"></i>
             </a>
           </div>
         </div>

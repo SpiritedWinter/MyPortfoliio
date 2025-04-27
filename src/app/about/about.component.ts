@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { PopupComponent } from '../shared/popup/popup.component';
 
 interface WorkExperience {
@@ -48,7 +48,7 @@ interface WorkExperience {
           </div>
           <div class="floating-container" (mouseenter)="setBoxHover(1, true)" (mouseleave)="setBoxHover(1, false)" (click)="openPopup('technical')">
             <div class="hover-circle"></div>
-            <h2 class="info-title">Technical Expertise</h2>
+          <h2 class="info-title">Technical Expertise</h2>
             <ng-container *ngIf="!boxHover[1]">
               <pre class="cs-code"><span class="cs-keyword">public class</span> <span class="cs-type">TechnicalExpertise</span>
 {{ '{' }}
@@ -77,10 +77,10 @@ interface WorkExperience {
 {{ '}' }}</pre>
             </ng-container>
             <ng-container *ngIf="boxHover[2]">
-              <p class="info-description">I believe in creating technology that is both powerful and accessible. My work is guided by principles of innovation, quality, and user-centric design.</p>
+              <p class="info-description">At any workplace, my primary aim is to minimize manual effort involved in repetitive or complex tasks by leveraging automation, robust coding practices, and the power of Artificial Intelligence. I focus on building scalable, efficient solutions that not only streamline operations but also enhance overall productivity.</p>
             </ng-container>
           </div>
-          <div class="floating-container" (mouseenter)="setBoxHover(3, true)" (mouseleave)="setBoxHover(3, false)">
+          <div class="floating-container" (mouseenter)="setBoxHover(3, true)" (mouseleave)="setBoxHover(3, false)" (click)="goToContact()">
             <div class="hover-circle"></div>
             <h2 class="info-title">Get in Touch</h2>
             <ng-container *ngIf="!boxHover[3]">
@@ -88,7 +88,7 @@ interface WorkExperience {
 {{ '{' }}
     <span class="cs-comment">// Open for collaboration</span>
     <span class="cs-keyword">public string</span> <span class="cs-variable">Message</span> = <span class="cs-string">"Let's work together!"</span>;
-{{ '}' }}</pre>
+{{ '}' }}</pre>,
             </ng-container>
             <ng-container *ngIf="boxHover[3]">
               <p class="info-description">Interested in collaboration or opportunities? I'm always open to discussing new projects and ideas.</p>
@@ -178,21 +178,44 @@ interface WorkExperience {
           </div>
         </div>
         <div *ngSwitchCase="'technical'" class="popup-section">
-          <h3>Technical Expertise</h3>
-          <div class="expertise-content">
-            <h4>Programming Languages</h4>
-            <ul>
-              <li>JavaScript/TypeScript</li>
-              <li>Python</li>
-              <li>Java</li>
-            </ul>
-            <h4>Frameworks & Tools</h4>
-            <ul>
-              <li>Angular</li>
-              <li>React</li>
-              <li>Node.js</li>
-              <li>Git</li>
-            </ul>
+          <div class="expertise-cards">
+            <div class="expertise-card">
+              <span class="expertise-icon">💻</span>
+              <span>
+                <b>Programming Languages:</b>
+                <span class="badge">Python</span>
+                <span class="badge">C#</span>
+                <span class="badge">C++</span>
+              </span>
+            </div>
+            <div class="expertise-card">
+              <span class="expertise-icon">🎨</span>
+              <span>
+                <b>Frontend Development:</b>
+                <span class="badge">Angular</span>
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+              </span>
+            </div>
+            <div class="expertise-card">
+              <span class="expertise-icon">🛠️</span>
+              <span>
+                <b>Backend Development:</b>
+                <span class="badge">.NET Core</span>
+                <span class="badge">.NET Framework</span>
+                <span class="badge">ML.NET</span>
+                <span class="badge">Design Patterns</span>
+                <span class="badge">LINQ</span>
+              </span>
+            </div>
+            <div class="expertise-card">
+              <span class="expertise-icon">🗄️</span>
+              <span>
+                <b>Databases:</b>
+                <span class="badge">SQL Server</span>
+                <span class="badge">SSMS</span>
+              </span>
+            </div>
           </div>
         </div>
         <div *ngSwitchDefault>
@@ -241,7 +264,7 @@ export class AboutComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -290,5 +313,9 @@ export class AboutComponent implements OnInit {
   highlightKeywords(text: string): string {
     return text.replace(/C#|\\.NET Core|SQL Server|RESTful APIs|GitHub Copilot|80%\\+|Singleton|Factory|Chain of Responsibility/gi, 
       match => `<span class='highlight'>${match}</span>`);
+  }
+
+  goToContact() {
+    this.router.navigate(['/contact']);
   }
 }
