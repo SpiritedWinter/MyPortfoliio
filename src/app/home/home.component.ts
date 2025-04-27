@@ -21,17 +21,19 @@ import { TrexGameComponent } from '../game/trex-game.component';
          Skills {{ hoverCount >= 2 ? '(Caught me!)' : '' }}
       </a>
       <div class="code-wrapper" [class.fade-out]="isGameStarted">
-        <pre class="code-syntax"><span class="keyword">static void</span> <span class="method">Main</span>() {{ '{' }}</pre>
-        <pre class="code-syntax indent"><span class="class">Console</span>.<span class="method">WriteLine</span>(<span class="string">"Press SPACE to play T-Rex Game"</span>);</pre>
-        <div class="content-wrapper" [class.hide-content]="isGameStarted">
-          <div class="intro-text">
-            <h1>
-              <span class="text-line line1" [class.slide-up]="isGameStarted">Hi,</span><br>
-              <span class="text-line line2" [class.slide-up]="isGameStarted">I'm <span class="gradient-text">Jaskaran</span>,</span><br>
-              <span class="text-line line3" [class.slide-up]="isGameStarted">backend developer</span>
-            </h1>
-            <p class="subtitle text-line line4" [class.slide-up]="isGameStarted">Full Stack Developer / Software Engineer</p>
-            <a routerLink="/contact" class="contact-button text-line line5" [class.slide-up]="isGameStarted">Contact me!</a>
+        <div class="intro-block">
+          <pre class="code-syntax"><span class="keyword">static void</span> <span class="method">Main</span>() {{ '{' }}</pre>
+          <pre class="code-syntax indent"><span class="class">Console</span>.<span class="method">WriteLine</span>(<span class="string">"Press SPACE to play T-Rex Game"</span>);</pre>
+          <div class="content-wrapper" [class.hide-content]="isGameStarted">
+            <div class="intro-text">
+              <h1>
+                <span class="text-line line1" [class.slide-up]="isGameStarted">Hi,</span><br>
+                <span class="text-line line2" [class.slide-up]="isGameStarted">I'm <span class="gradient-text">Jaskaran</span>,</span><br>
+                <span class="text-line line3" [class.slide-up]="isGameStarted">backend developer</span>
+              </h1>
+              <p class="subtitle text-line line4" [class.slide-up]="isGameStarted">Full Stack Developer / Software Engineer</p>
+              <a routerLink="/contact" class="contact-button text-line line5" [class.slide-up]="isGameStarted">Contact me!</a>
+            </div>
           </div>
         </div>
         <pre class="code-syntax">{{ '}' }}</pre>
@@ -201,11 +203,48 @@ import { TrexGameComponent } from '../game/trex-game.component';
 
     @media (max-width: 768px) {
       h1 {
-        font-size: 3.5rem;
+        font-size: 2.2rem;
       }
-
       .subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-top: 1rem;
+        margin-bottom: 1.2rem;
+      }
+      .intro-text {
+        padding: 1rem;
+      }
+      .skills-button {
+        display: none !important;
+      }
+      .code-wrapper {
+        max-width: 100vw;
+        padding: 0 5px;
+      }
+      .content-wrapper {
+        max-width: 100vw;
+        padding: 0 5px;
+      }
+      .intro-block {
+        gap: 0.3rem;
+        margin-bottom: 1rem;
+      }
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.3rem;
+      }
+      .skills-button {
+        font-size: 0.95rem;
+        padding: 0.7rem 0.5rem;
+        left: 5px;
+        right: 5px;
+        bottom: 10px;
+      }
+      .intro-text {
+        padding: 0.5rem;
+      }
+      .subtitle {
+        font-size: 0.8rem;
       }
     }
 
@@ -258,6 +297,14 @@ import { TrexGameComponent } from '../game/trex-game.component';
       pointer-events: none;
       transform: translateY(-200%) !important;
       transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .intro-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
     }
   `]
 })
