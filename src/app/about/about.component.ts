@@ -124,45 +124,37 @@ interface WorkExperience {
                     <li>
                       <span class="achievement-icon">🛠️</span>
                       <span>
-                        Built <span class="highlight">reusable libraries</span> with 
-                        <span class="badge">RESTful APIs</span> and implemented core design patterns: 
-                        <span class="badge">Singleton</span>, <span class="badge">Factory</span>, <span class="badge">Chain of Responsibility</span>.
+                        Migrated a legacy Advanced MES application from MFC C++ to a modern full-stack solution using Next.js and NestJS.
                       </span>
                     </li>
                     <li>
                       <span class="achievement-icon">🚀</span>
                       <span>
-                        Designed a <span class="highlight">smart caching mechanism</span> to pre-load data, 
-                        <span class="result">drastically reducing UI load times</span> for high-latency screens.
+                        Successfully transformed the entire application architecture, improving performance and maintainability.
                       </span>
                     </li>
                     <li>
                       <span class="achievement-icon">🗄️</span>
                       <span>
-                        Refactored complex <span class="badge">hierarchical datatypes</span> into flat structures 
-                        (<span class="badge">nvarchar(25)</span>) across <span class="badge">SQL Server</span> databases; 
-                        optimized procedures, views, and data models.
+                        Built internal reusable modules and RESTful APIs using NestJS, implementing core design patterns such as Singleton, Factory, and Chain of Responsibility to enhance scalability and maintainability.
                       </span>
                     </li>
                     <li>
                       <span class="achievement-icon">🧪</span>
                       <span>
-                        Created a <span class="highlight">unit test solution</span> and achieved 
-                        <span class="progress-badge">80%+ code coverage</span> using <span class="badge">GitHub Copilot</span>.
+                        Designed and implemented an intelligent caching mechanism in NestJS to preload and serve data, significantly reducing API response times and improving performance for high latency user interfaces.
                       </span>
                     </li>
                     <li>
                       <span class="achievement-icon">🤖</span>
                       <span>
-                        Guided team members on crafting effective prompts for <span class="badge">GitHub Copilot</span> 
-                        to generate accurate and relevant unit test cases.
+                        Developed comprehensive automated tests for NestJS services involved in the migration process, leveraging Playwright and GitHub Copilot to achieve over 80% code coverage across the codebase.
                       </span>
                     </li>
                     <li>
                       <span class="achievement-icon">🏆</span>
                       <span>
-                        Gained strong expertise in <span class="badge">C#</span>, <span class="badge">.NET Core</span>, 
-                        and <span class="badge">scalable backend architecture</span>.
+                        Refactored complex hierarchical datatypes into flat structures (nvarchar(25)) across SQL Server databases; optimized dependent procedures, views, and data models led to 80% reduction in memory consumption and 70% faster query execution time.
                       </span>
                     </li>
                   </ul>
@@ -180,32 +172,18 @@ interface WorkExperience {
         <div *ngSwitchCase="'technical'" class="popup-section">
           <div class="expertise-cards">
             <div class="expertise-card">
-              <span class="expertise-icon">💻</span>
-              <span>
-                <b>Programming Languages:</b>
-                <span class="badge">Python</span>
-                <span class="badge">C#</span>
-                <span class="badge">C++</span>
-              </span>
-            </div>
-            <div class="expertise-card">
-              <span class="expertise-icon">🎨</span>
-              <span>
-                <b>Frontend Development:</b>
-                <span class="badge">Angular</span>
-                <span class="badge">HTML</span>
-                <span class="badge">CSS</span>
-              </span>
-            </div>
-            <div class="expertise-card">
               <span class="expertise-icon">🛠️</span>
               <span>
-                <b>Backend Development:</b>
-                <span class="badge">.NET Core</span>
-                <span class="badge">.NET Framework</span>
-                <span class="badge">ML.NET</span>
-                <span class="badge">Design Patterns</span>
-                <span class="badge">LINQ</span>
+                <b>Frameworks:</b>
+                <span class="badge">Nest.js</span>
+                <span class="badge">Next.js</span>
+                <span class="badge">React.js</span>
+                <span class="badge">DotNet</span>
+                <span class="badge">MFC C++</span>
+                <span class="badge">Playwright</span>
+                <span class="badge">Angular</span>
+                <span class="badge">MSTest</span>
+                <span class="badge">MVC Razor Pages</span>
               </span>
             </div>
             <div class="expertise-card">
@@ -213,7 +191,29 @@ interface WorkExperience {
               <span>
                 <b>Databases:</b>
                 <span class="badge">SQL Server</span>
-                <span class="badge">SSMS</span>
+              </span>
+            </div>
+            <div class="expertise-card">
+              <span class="expertise-icon">💻</span>
+              <span>
+                <b>Coding Languages:</b>
+                <span class="badge">TypeScript</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">C#</span>
+                <span class="badge">Python</span>
+                <span class="badge">Java</span>
+                <span class="badge">C++</span>
+                <span class="badge">SQL</span>
+              </span>
+            </div>
+            <div class="expertise-card">
+              <span class="expertise-icon">📦</span>
+              <span>
+                <b>Version Control:</b>
+                <span class="badge">Git</span>
+                <span class="badge">Azure Git</span>
+                <span class="badge">GitHub</span>
+                <span class="badge">TFS</span>
               </span>
             </div>
           </div>
@@ -236,30 +236,29 @@ export class AboutComponent implements OnInit {
   workExperiences: WorkExperience[] = [
     {
       title: 'Product Developer',
-      company: 'Epicor Software Corporation',
+      company: 'Epicor Software',
       location: 'Bangalore, India',
       period: 'Sep 2023 – Present',
-      technologies: ['C#', '.NET Core', 'SQL Server', 'RESTful APIs'],
+      technologies: ['Next.js', 'NestJS', 'SQL Server', 'RESTful APIs'],
       achievements: [
-        'Migrated legacy Advanced MES application from MFC C++ to modern C# .NET Core architecture.',
-        'Built internal reusable libraries with RESTful APIs and implemented core design patterns including Singleton, Factory, and Chain of Responsibility.',
-        'Designed and implemented a smart caching mechanism to pre-load data, drastically reducing UI load times for high-latency screens.',
-        'Refactored complex hierarchical datatypes into flat structures (nvarchar(25)) across SQL Server databases; optimized dependent procedures, views, and data models.',
-        'Created a unit test solution for the services involved in the migration process and achieved 80%+ code coverage across projects using GitHub Copilot.',
-        'Guided team members on crafting effective prompts for GitHub Copilot to generate accurate and relevant unit test cases.',
-        'Gained strong expertise in C#, .NET Core, and scalable backend architecture.'
+        'Migrated a legacy Advanced MES application from MFC C++ to a modern full-stack solution using Next.js and NestJS.',
+        'Successfully transformed the entire application architecture, improving performance and maintainability.',
+        'Built internal reusable modules and RESTful APIs using NestJS, implementing core design patterns such as Singleton, Factory, and Chain of Responsibility to enhance scalability and maintainability.',
+        'Designed and implemented an intelligent caching mechanism in NestJS to preload and serve data, significantly reducing API response times and improving performance for high latency user interfaces.',
+        'Developed comprehensive automated tests for NestJS services involved in the migration process, leveraging Playwright and GitHub Copilot to achieve over 80% code coverage across the codebase.',
+        'Refactored complex hierarchical datatypes into flat structures (nvarchar(25)) across SQL Server databases; optimized dependent procedures, views, and data models led to 80% reduction in memory consumption and 70% faster query execution time.'
       ]
     },
     {
       title: 'Intern',
-      company: 'Epicor Software Corporation',
+      company: 'Epicor Software',
       location: 'Bangalore, India',
       period: 'Feb 2023 – Sep 2023',
-      technologies: ['MFC C++', 'ASP.NET MVC', 'SSRS', 'AI'],
+      technologies: ['ASP.NET MVC', 'SSRS', 'AI'],
       achievements: [
-        'Developed SSRS reports and resolved bugs in the classic Advanced MES system built with MFC C++.',
-        'Implemented dynamic report filters in an ASP.NET MVC application.',
-        'Built an AI-powered infrastructure for automated multilingual support in the MES web application.'
+        'Built an AI-powered infrastructure for automated multilingual support in the MES web application, reducing the manual work by 90% for language translation.',
+        'Implemented dynamic report filters in an ASP.NET MVC application for SSRS reports.',
+        'Successfully delivered 40 out of 150 SSRS reports, over 25% of the total in a single release for the classic Advanced MES system, significantly reducing backlog and preventing work overflow in subsequent releases.'
       ]
     }
   ];
